@@ -6,6 +6,8 @@ function DisplayUserInputIdea() {
     let idea_user = input_box.value;
 
     if (idea_user === "") return;
+    if(list_ideas.childElementCount > 50) return;
+    console.log(list_ideas.childElementCount);
 
     input_box.value = "";
 
