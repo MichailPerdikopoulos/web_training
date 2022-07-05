@@ -1,0 +1,25 @@
+#header-section{
+    background-color: darkslategrey;
+    color: white;
+    text-align: center;
+    padding: 5%;
+    width: 100%;
+}
+
+#header-section h1{
+    font-size: 100px;
+    margin-bottom: 2%;
+}
+
+#header-section h2{
+    font-size: 50px;
+    margin-bottom: 10%;
+}
+
+#header-section p{
+    font-size: 30px;    
+}
+
+.remove-button{
+    margin: 0.2%;
+}
