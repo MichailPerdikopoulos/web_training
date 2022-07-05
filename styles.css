@@ -24,15 +24,6 @@
     margin: 10%;
 }
 
-/* #ideas-section{
-    background-color: darkgray;
-    width: 100%;
-    left: 0;
-    top: 70vh;
-    position: absolute;
-    padding-left: 2%;
-} */
-
 .remove-button{
     margin: 0.2%;
 }
@@ -46,6 +37,7 @@
     width: 100%;
     left: 0;
     top: 70vh;
+    height: 30vh;
     position: absolute;
     padding-left: 2%;
 }
@@ -90,10 +82,28 @@
     }
 
     #ideas-to-check{
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
     
     #questions-to-ask{
         margin-left: 0%;
     }
 }
+
+.close{
+    padding: 0.5%;
+    margin-right: 2%;
+    transition: 0.1s;
+}
+
+.close:hover {
+    background-color: #f44336;
+    display: inline;
+    color: white;
+    cursor: pointer;
+  }
+
+  .bullet-item-list{
+    list-style-type: none;
+    font-size: 20px;
+  }

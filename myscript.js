@@ -1,5 +1,6 @@
 FillListsFromLocalStorage();
 TriggerStoreItemWithEnterInInput();
+CreateCloseButtonsForListItems();
 
 function GetUserInput(){
     const list_to_update = event.target.parentElement.parentElement.id;
@@ -37,7 +38,10 @@ function GetUserInput(){
 function AddItemToList(item, list_store){
     let new_item = document.createElement("li");
     
+    new_item.className = "bullet-item-list";
     new_item.appendChild(document.createTextNode(item));
+    AddCloseButtonToItem(new_item);
+
     list_store.appendChild(new_item);
 }
 
@@ -78,4 +82,36 @@ function AddEventWithEnterStoreInput(ipnut_box){
     ipnut_box.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {GetUserInput();}
     });
+}
+
+function CreateCloseButtonsForListItems(){
+    var list_items_collection = document.getElementsByClassName("bullet-item-list");
+
+    for (let i = 0; i < list_items_collection.length; i++){
+        AddCloseButtonToItem(list_items_collection[i]);
+    }
+}
+
+function AddCloseButtonToItem(list_item){
+
+    for (let i = 0; i < list_item.children.length; i++) {
+        if (list_item.children[i].tagName === "SPAN") return;
+      }
+    var span = document.createElement("span");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    list_item.prepend(span);
+
+    span.onclick = function() {
+        list_item.style.display = "none";
+
+        // Remove from local storage
+        let value_storage = list_item.innerHTML;
+        value_storage = value_storage.split('>')[value_storage.split('>').length - 1];
+
+        let key_storage = localStorage.key(value_storage);       
+
+        localStorage.removeItem(key_storage);
+    }
 }
