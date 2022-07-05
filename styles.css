@@ -2,8 +2,11 @@
     background-color: darkslategrey;
     color: white;
     text-align: center;
-    padding: 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 70vh;
 }
 
 #header-section h1{
@@ -17,9 +20,80 @@
 }
 
 #header-section p{
-    font-size: 30px;    
+    font-size: 30px;
+    margin: 10%;
 }
+
+/* #ideas-section{
+    background-color: darkgray;
+    width: 100%;
+    left: 0;
+    top: 70vh;
+    position: absolute;
+    padding-left: 2%;
+} */
 
 .remove-button{
     margin: 0.2%;
+}
+
+#w3-to-do-list{
+    position: absolute;
+}
+
+#list-section{
+    background-color: darkgray;
+    width: 100%;
+    left: 0;
+    top: 70vh;
+    position: absolute;
+    padding-left: 2%;
+}
+
+#list-section h3{
+    color: darkblue;
+    width: 120%;
+}
+
+#input-list{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.span-button{
+    margin-left: 5%;
+    padding: 1%;
+    width: 10%;
+    color: aliceblue;
+    background: darkblue;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.span-button:hover{
+    background-color: rgb(190, 13, 13);
+}
+
+#ideas-to-check{
+    margin-right: 5%;
+}
+
+#questions-to-ask{
+    margin-left: 5%;
+}
+
+@media screen and (max-width: 1000px) {
+    #input-list{
+        display: block;
+    }
+
+    #ideas-to-check{
+        margin-bottom: 10%;
+    }
+    
+    #questions-to-ask{
+        margin-left: 0%;
+    }
 }
